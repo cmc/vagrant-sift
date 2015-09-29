@@ -7,11 +7,12 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = VBOX
-  config.vm.network "public_network"
+  config.vm.network "public_network" # bridge to network
 
-  config.vm.provider "virtualbox" do |v|
-    v.customize ["modifyvm", :id, "--memory", 2048]   # set memory here
-    v.customize ["modifyvm", :id, "--cpus", 2 ]       # set cores here
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = true # set headless here
+    vb.memory = "3096" # set memory here
+    vb.cpus = "2" # set cores here
   end
 
   config.vm.provision "shell" do |s|

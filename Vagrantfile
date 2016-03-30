@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-VBOX = "ubuntu/precise64"
+VBOX = "ubuntu/trusty64"
 
 VAGRANTFILE_API_VERSION = "2"
 
